@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planter4</title>
+  </head>
+  <body>
+    <h2 class="mt-4 text-center">Truncated cone</h2>
+    <div class="input-group mt-3">
+      <span class="input-group-text">Enter Top Radius</span>
+      <input
+        onblur="validateRadius()"
+        id="radius"
+        type="text"
+        aria-label="radius"
+        class="form-control"
+        placeholder="Enter Top Radius"
+        name="radius"
+        min="0"
+        required
+      />
+      <span class="input-group-text" id="basic-addon1">(cm)</span>
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback">Please enter a valid Radius</div>
+    </div>
+    <div class="input-group mt-3">
+      <span class="input-group-text">Enter Bottom Radius</span>
+      <input
+        onblur="validateRadius2()"
+        id="radius2"
+        type="text"
+        aria-label="radius2"
+        class="form-control"
+        placeholder="Enter Bottom Radius"
+        name="radius2"
+        min="0"
+        required
+      />
+      <span class="input-group-text" id="basic-addon1">(cm)</span>
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback">Please enter a valid Radius</div>
+    </div>
+    <div class="input-group mt-3">
+      <span class="input-group-text">Enter Height</span>
+      <input
+        onblur="validateHeight()"
+        id="height"
+        type="text"
+        aria-label="height"
+        class="form-control"
+        placeholder="Enter height"
+        name="height"
+        min="0"
+        required
+      />
+      <span class="input-group-text" id="basic-addon1">(cm)</span>
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback">Please enter a valid Height</div>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button
+        id="submitButton"
+        type="submit"
+        class="btn btn-warning mt-3 float-start"
+        onclick="displayPlanter4()"
+        disabled
+      >
+        Order
+      </button>
+    </div>
+    <div id="order"></div>
+  </body>
+</html>

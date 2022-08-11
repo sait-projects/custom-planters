@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./main.js"></script>
+
+    <title>Custom Planters</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-4 p-0">
+        <div id="coverLeft">
+          <div class="section1">
+            <div class="container text-center p-0">
+              <!-- Logo create with Canva -->
+              <img class="logo" src="./images/Logo.png" alt="Logo" />
+              <h1 class="header mt-5 px-3">Welcome To Custom Planters</h1>
+              <h2 class="body mt-5 px-3">
+                Where You Can Custom Order Your Favorite Style
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 p-0">
+        <div class="section2">
+          <div class="container p-0">
+            <div class="outer-box">
+              <div class="row">
+                <div class="col-2">
+                  <!-- Logo create with Canva -->
+                  <img
+                    class="logo2 ms-5 mt-4"
+                    src="./images/Logo2.png"
+                    alt="Logo"
+                  />
+                </div>
+                <div class="col-8 my-auto">
+                  <h1 class="text-center mt-3">Order Form</h1>
+                </div>
+                <div class="col-2">
+                  <!-- Logo create with Canva -->
+                  <img
+                    class="logo2 ms-5 mt-4"
+                    src="./images/Logo2.png"
+                    alt="Logo"
+                  />
+                </div>
+                <form id="newPlantersForm" action="" onsubmit="return false">
+                  <div class="row">
+                    <div class="col p-5">
+                      <h2 class="text-center">Customer Info</h2>
+                      <div>
+                        <label for="firstName" class="form-label mt-3"
+                          >Client Name</label
+                        >
+                        <input
+                          onblur="validateName()"
+                          type="text"
+                          class="form-control"
+                          id="clientName"
+                          name="clientName"
+                          value=""
+                          pattern="[A-Za-z- ]+"
+                          required
+                          autofocus
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                          Please enter a valid Name
+                        </div>
+                      </div>
+                      <div>
+                        <label for="address" class="form-label mt-3"
+                          >Address</label
+                        >
+                        <input
+                          onblur="validateAddress()"
+                          type="text"
+                          class="form-control"
+                          id="address"
+                          name="address"
+                          value=""
+                          pattern="^[a-zA-Z0-9- ]+$"
+                          required
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                          Please enter a valid Address
+                        </div>
+                      </div>
+                      <div>
+                        <label for="postalCode" class="form-label mt-3"
+                          >Postal Code</label
+                        >
+                        <input
+                          onblur="validatePostalCode()"
+                          type="text"
+                          class="form-control"
+                          id="postalCode"
+                          name="postalCode"
+                          value=""
+                          placeholder="L9L9L9"
+                          pattern="[a-zA-Z][0-9][a-zA-Z][0-9][a-zA-Z][0-9]"
+                          required
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                          Please enter a valid Postal Code eg. T5T5T5
+                        </div>
+                      </div>
+                      <div>
+                        <label for="telephone" class="form-label mt-3"
+                          >Telephone</label
+                        >
+                        <input
+                          onblur="validatePhone()"
+                          type="text"
+                          class="form-control"
+                          id="telephone"
+                          name="phone"
+                          value=""
+                          placeholder="xxx-xxx-xxxx"
+                          pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+                          required
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                          Please enter a valid Phone number eg. xxx-xxx-xxxx
+                        </div>
+                      </div>
+                      <div class="row mt-2">
+                        <div class="col-4">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="phoneNumber"
+                              id="business"
+                              value="business"
+                            />
+                            <label class="form-check-label" for="business">
+                              Business
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="phoneNumber"
+                              id="home"
+                              value="home"
+                              checked
+                            />
+                            <label class="form-check-label" for="home">
+                              Home
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <label for="email" class="form-label mt-3">Email</label>
+                        <input
+                          onblur="validateEmail()"
+                          type="text"
+                          class="form-control"
+                          id="email"
+                          name="email"
+                          value=""
+                          placeholder="yourName@gmail.com"
+                          pattern="^[a-zA-Z0-9_.-]+@[a-zA-Z]+[\.][a-zA-Z]{2,}$"
+                          required
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                          Please enter a valid Email eg. John@example.com
+                        </div>
+                      </div>
+                      <div class="mt-3">
+                        <label for="planter" class="form-label">Planters</label>
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
+                          id="planterSelection"
+                          onchange="displayPlanterOption()"
+                        >
+                          <option value="0" selected>Select a Planter</option>
+                          <option value="1">Square/Rectangular Cubes:</option>
+                          <option value="2">Flat bottomed cylinders:</option>
+                          <option value="3">½ Spherical:</option>
+                          <option value="4">Truncated cone:</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col p-4">
+                      <div id="planterSection"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
